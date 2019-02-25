@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<fieldset style="width: 250px">
+		<label>Fruit Selection: </label>
+		<select id="prutas">
+			<option>Apple</option>
+			<option>Banana</option>
+			<option>Orange</option>
+		</select><br>
+		<label>Cash: </label>
+		<input type="text" id="cash"><br>
+	</fieldset>	<br>
+	<button id="save" onclick="fruits.save()">SAVE</button>
+	<img src="apple.jpg" id="a" hidden="true" width="200px">
+	<img src="banana.jpg" id="b" hidden="true" width="200px">
+	<img src="orange.jpg" id="o" hidden="true" width="200px">
+	<br><br>
+	<label>Selected Fruit: </label>
+	<p id="x"></p>
+	<label>Cash: </label>
+	<p id="cash2"></p>
+	<label>Change: </label>
+	<p id="change"></p>
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript">
+		var fruits = {
+			selectedfr : "",
+			money : 0,
+			save : function() {
+				froptions = document.getElementById("prutas").options;
+				frindex = document.getElementById("prutas").selectedIndex;
+				selectedfr = froptions[frindex].value;
+			},
+		}
+
+		$(function() {
+			$("#save").click(function() {
+				$("img").hide();
+				if (selectedfr == "Apple") {
+					$("#a").show();
+					document.getElementById("x").innerHTML = "You selected " + selectedfr
+				}
+				else if (selectedfr == "Banana") {
+					$("#b").show();
+					document.getElementById("x").innerHTML = "You selected " + selectedfr
+				}
+				else if (selectedfr == "Orange") {
+					document.get
+				}
+			})
+		})
+	</script>
+</body>
+</html>
